@@ -1,12 +1,12 @@
 import React from "react";
 import { ChatState } from "../context/ChatProvider";
 
-export const UserList = () => {
-  const { user } = ChatState();
-  console.log(user);
+export const UserList = ({name,avater}) => {
   return (
     <div>
-      <p>{user.name}</p>
+      <img src={avater} alt="" />
+      <p>{name}</p>
+
     </div>
   );
 };

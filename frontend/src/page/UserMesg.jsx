@@ -9,7 +9,8 @@ export const UserMesg = () => {
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
- 
+  const [data, setData] = useState([]);
+
   const OpenModal = () => {
     setIsModalOpen(true);
   };
@@ -23,6 +24,16 @@ export const UserMesg = () => {
   };
 
   const handleSubmit = async () => {};
+
+  useEffect(() => {
+    const res = axios
+      .get(`${process.env.REACT_APP_API_URL}/api/user`)
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      });
+  }, []);
+  console.log(data);
 
   return (
     <div className="user-container">
@@ -51,8 +62,8 @@ export const UserMesg = () => {
         />
       </div>
 
-      {searchResult?.map((el) => (
-        <UserList key={el._id} />
+      {data.map((el) => (
+        <UserList key={el.id} {...el} />
       ))}
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>

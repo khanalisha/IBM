@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @layer utilities {
   .side-bar-component {
-    border: 2px solid red;
+
     display: flex;
     padding: 16px 16px 24px 16px;
     flex-direction: column;
@@ -45,7 +45,7 @@
   }
   .user-container {
     width: 345px;
-    border: 2px solid blue;
+
   }
   .user-p {
     color: #000;
@@ -76,6 +76,6 @@
     line-height: 150%; /* 18px */
   }
   .a {
-    border: 2px solid green;
+  
   }
 }
