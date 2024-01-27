@@ -1,0 +1,1 @@
+export const ALL_SEARCH_USER="all_search_user"
